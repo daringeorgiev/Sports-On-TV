@@ -1,0 +1,26 @@
+{
+  "name": "sports-on-tv",
+  "description": "live sports on tv",
+  "main": "index.js",
+  "authors": [
+    "darinnn <georgiev.darin@gmail.com>",
+    "mihdimitrov <mihdimitrov89@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "live",
+    "sports",
+    "tv"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
