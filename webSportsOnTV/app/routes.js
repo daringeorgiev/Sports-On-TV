@@ -1,7 +1,8 @@
 (function() {
     'use strict';
     var sportsCtrl = require('./controllers/SportsController'),
-        usersCtrl = require('./controllers/UsersController');
+        usersCtrl = require('./controllers/UsersController'),
+        auth = require('./auth');
 
     module.exports = function(app) {
         // Sports ===============================================
