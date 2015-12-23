@@ -8,6 +8,7 @@
         // Sports ===============================================
         app.get('/api/sports/today', sportsCtrl.getTodaySports);
         app.get('/api/sports/getById', sportsCtrl.getSportById);
+        app.get('/api/sports/getAll', sportsCtrl.getAllSports);
         app.post('/api/sports/create', sportsCtrl.createSport);
         app.put('/api/sports/update', sportsCtrl.updateSport);
         app.post('/api/sports/delete', sportsCtrl.deleteSport);

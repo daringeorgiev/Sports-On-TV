@@ -4,6 +4,20 @@
 
     module.exports = {
         getTodaySports: function(req, res) {
+            Sport.find({
+                // ToDo
+                // startTime:
+            }).sort({
+                startTime: 'asc'
+            }).exec(function(err, sports) {
+                if (err) {
+                    throw err;
+                }
+                res.json(sports);
+            });
+        },
+
+        getAllSports: function(req, res) {
             Sport.find({}).sort({
                 startTime: 'asc'
             }).exec(function(err, sports) {
