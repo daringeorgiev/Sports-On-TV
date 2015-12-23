@@ -28,6 +28,20 @@
                 }
                 res.send(sport);
             });
+        },
+
+        deleteSport: function(req, res) {
+            Sport.remove({
+                _id: req.body.id
+            }, function(err) {
+                if (err) {
+                    res.send(err);
+                    throw err;
+                }
+                res.json({
+                    message: 'Sport deleted successfully'
+                });
+            });
         }
     };
 }());

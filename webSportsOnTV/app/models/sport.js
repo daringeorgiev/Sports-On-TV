@@ -3,9 +3,18 @@
     var mongoose = require('mongoose');
 
     var sportSchema = mongoose.Schema({
-        sportName: String,
-        startTime: Date,
-        tv: String,
+        sportName: {
+            type: 'String',
+            required: true
+        },
+        startTime: {
+            type: 'Date',
+            required: true
+        },
+        tv: {
+            type: 'String',
+            required: true
+        },
         sportType: String,
         descr: String
     });
