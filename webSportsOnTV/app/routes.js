@@ -7,6 +7,7 @@
     module.exports = function(app) {
         // Sports ===============================================
         app.get('/api/sports/today', sportsCtrl.getTodaySports);
+        app.post('/api/sports/create', sportsCtrl.createSport);
 
         // Users =================================================
         app.post('/api/users/login', usersCtrl.userLogin);

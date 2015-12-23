@@ -3,11 +3,10 @@
     var mongoose = require('mongoose');
 
     var sportSchema = mongoose.Schema({
-        name: String,
-        date: Date,
-        startHour: Date,
+        sportName: String,
+        startTime: Date,
         tv: String,
-        type: String,
+        sportType: String,
         descr: String
     });
 
