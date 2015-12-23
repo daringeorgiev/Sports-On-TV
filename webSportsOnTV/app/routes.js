@@ -9,6 +9,7 @@
         app.get('/api/sports/today', sportsCtrl.getTodaySports);
         app.get('/api/sports/getById', sportsCtrl.getSportById);
         app.post('/api/sports/create', sportsCtrl.createSport);
+        app.put('/api/sports/update', sportsCtrl.updateSport);
         app.post('/api/sports/delete', sportsCtrl.deleteSport);
 
         // Users =================================================

@@ -42,6 +42,36 @@
             });
         },
 
+        updateSport: function(req, res) {
+            Sport.findOne({
+                _id: req.body.id
+            }, function(err, sport) {
+                if (err) {
+                    res.send(err);
+                    throw err;
+                }
+
+                if (!sport) {
+                    return res.status(404)
+                        .send('Sport not found');
+                }
+
+                sport.sportName = req.body.sportName;
+                sport.startTime = new Date(req.body.startTime);
+                sport.tv = req.body.tv;
+                sport.sportType = req.body.sportType;
+                sport.descr = req.body.descr;
+
+                sport.save(function(err, sport) {
+                    if (err) {
+                        res.send(err);
+                        throw err;
+                    }
+                    res.send(sport);
+                });
+            });
+        },
+
         deleteSport: function(req, res) {
             Sport.remove({
                 _id: req.body.id
