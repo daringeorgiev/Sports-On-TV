@@ -14,6 +14,18 @@
             });
         },
 
+        getSportById: function(req, res) {
+            Sport.find({
+                _id: req.query.id
+            }, function(err, sport) {
+                if (err) {
+                    res.send(err);
+                    throw err;
+                }
+                res.send(sport);
+            });
+        },
+
         createSport: function(req, res) {
             Sport.create({
                 sportName: req.body.sportName,

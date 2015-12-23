@@ -7,6 +7,7 @@
     module.exports = function(app) {
         // Sports ===============================================
         app.get('/api/sports/today', sportsCtrl.getTodaySports);
+        app.get('/api/sports/getById', sportsCtrl.getSportById);
         app.post('/api/sports/create', sportsCtrl.createSport);
         app.post('/api/sports/delete', sportsCtrl.deleteSport);
 
