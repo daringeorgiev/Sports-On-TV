@@ -4,9 +4,15 @@
 
     module.exports = {
         getTodaySports: function(req, res) {
+            var today = new Date();
+            var tomorrow = new Date();
+            tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
+
             Sport.find({
-                // ToDo
-                // startTime:
+                startTime: {
+                    "$gte": today,
+                    "$lt": tomorrow
+                }
             }).sort({
                 startTime: 'asc'
             }).exec(function(err, sports) {
