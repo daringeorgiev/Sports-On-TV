@@ -74,19 +74,34 @@ module.exports = {
     },
 
     createSport: function(req, res) {
-        Sport.create({
+        Sport.find({
             sportName: req.body.sportName,
             startTime: new Date(req.body.startTime),
-            tv: req.body.tv,
-            sportType: req.body.sportType,
-            descr: req.body.descr
-        }, function(err, sport) {
+        }, function(err, data) {
             if (err) {
                 res.send(err);
                 throw err;
             }
-            res.send(sport);
-        });
+            // Check if sport exists
+            if (data.length) {
+                return res.status(409)
+                    .send('The sport already exist.');
+            } else {
+                Sport.create({
+                    sportName: req.body.sportName,
+                    startTime: new Date(req.body.startTime),
+                    tv: req.body.tv,
+                    sportType: req.body.sportType,
+                    descr: req.body.descr
+                }, function(err, sport) {
+                    if (err) {
+                        res.send(err);
+                        throw err;
+                    }
+                    res.send(sport);
+                });
+            }
+        })
     },
 
     updateSport: function(req, res) {
