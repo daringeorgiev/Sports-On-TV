@@ -5,6 +5,7 @@ var express = require('express'),
     database = require('./config/database'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
+    cors = require('cors'),
     configPort = 8080;
 
 // configuration ================================
@@ -19,6 +20,8 @@ app.use(bodyParser.json({
     type: 'application/vnd.api+json'
 }));
 app.use(methodOverride());
+
+app.use(cors())
 
 //routes ========================================
 require('./app/routes')(app);
