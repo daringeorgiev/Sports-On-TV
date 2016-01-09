@@ -1,0 +1,28 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Видове спортове</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doTypeFilters()">
+      <div class="list">
+          <ul class="list">
+              <li class="item item-toggle" ng-repeat="sportType in sportTypes">
+                 {{sportType.name}}
+                 <label class="toggle toggle-positive">
+                   <input type="checkbox" ng-model = "sportType.selected">
+                   <div class="track">
+                     <div class="handle"></div>
+                   </div>
+                 </label>
+              </li>
+          </ul>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Приложи филтрите</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Телевизии</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doTvFilters()">
+      <div class="list">
+        <ul class="list">
+          <li class="item item-toggle" ng-repeat="tv in tvs">
+            <a class="item item-avatar" href="#">
+              <img ng-src="../img/tv/{{tv.pic}}.jpg">
+              <h2>
+                {{tv.name}}
+              </h2>
+            </a>
+
+            <label class="toggle toggle-positive">
+              <input ng-model="tv.selected" type="checkbox">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </ion-content>
+  <ion-tabs class="tabs-positive">
+    <ion-tab title="Приложи филтрите"></ion-tab>
+  </ion-tabs>
+</ion-modal-view>

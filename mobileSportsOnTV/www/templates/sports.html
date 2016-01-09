@@ -1,0 +1,32 @@
+<ion-view view-title="Спортни Предавания">
+  <ion-content>
+    <ion-list>
+      <ion-item href="#/app/sports/{{sport.id}}" ng-repeat="sport in sports | filter : {}">
+        <!-- {{sport.tv + ' -> ' + sport.sportName}} -->
+        <a class="item item-avatar" href="#">
+          <img src="../img/tv/diema.jpg">
+          <p>
+              {{sport.startTime.substring(11, 16)}}
+          </p>
+          <h2>{{sport.sportName}}</h2>
+          <p>{{sport.descr}}</p>
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-tabs class="tabs-positive">
+
+    <ion-tab on-select="ctrl.getTodaySports()" title="Днес">
+      <!-- Tab 1 content -->
+    </ion-tab>
+
+    <ion-tab title="Утре">
+      <!-- Tab 2 content -->
+    </ion-tab>
+
+    <ion-tab title="Други ден">
+      <!-- Tab 3 content -->
+    </ion-tab>
+
+  </ion-tabs>
+</ion-view>
