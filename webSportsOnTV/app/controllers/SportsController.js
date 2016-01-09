@@ -1,4 +1,5 @@
-var Sport = require('../models/sport');
+var Sport = require('../models/sport'),
+    TV = require('../models/tv');
 
 module.exports = {
     getTodaySports: function(req, res) {
