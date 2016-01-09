@@ -8,11 +8,11 @@ module.exports = function(app) {
     app.get('/api/sports/getByDaysDiff', sportsCtrl.getSportsByDaysDiff);
 
 
-    app.get('/api/sports/getById', sportsCtrl.getSportById);
+    app.get('/api/sports/getById', auth.isLoggedIn, sportsCtrl.getSportById);
     app.get('/api/sports/getAll', sportsCtrl.getAllSports);
-    app.post('/api/sports/create', sportsCtrl.createSport);
-    app.put('/api/sports/update', sportsCtrl.updateSport);
-    app.post('/api/sports/delete', sportsCtrl.deleteSport);
+    app.post('/api/sports/create', auth.isLoggedIn, sportsCtrl.createSport);
+    app.put('/api/sports/update', auth.isLoggedIn, sportsCtrl.updateSport);
+    app.post('/api/sports/delete', auth.isLoggedIn, sportsCtrl.deleteSport);
 
     // Users =================================================
     app.post('/api/users/login', usersCtrl.userLogin);
