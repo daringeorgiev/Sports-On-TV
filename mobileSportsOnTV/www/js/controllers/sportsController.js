@@ -17,6 +17,9 @@
         });
     };
 
+    self.tvChannels = sportsService.getTvChannels();
+    self.sportTypes = sportsService.getSportTypes();
+
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/types.html', {
       scope: $scope
@@ -24,7 +27,7 @@
       $scope.modalTypes = modal;
     });
 
-    $ionicModal.fromTemplateUrl('templates/tvs.html', {
+    $ionicModal.fromTemplateUrl('templates/tvChannels.html', {
       scope: $scope
     }).then(function(modal) {
       $scope.modalTvs = modal;
@@ -65,108 +68,6 @@
         $scope.closeLogin();
       }, 1000);
     };
-
-    self.sportTypes = [{
-      'typeId': 1,
-      'name': 'Футбол',
-      'selected': true
-    }, {
-      'typeId': 2,
-      'name': 'Отборни спортове',
-      'selected': false
-    }, {
-      'typeId': 3,
-      'name': 'Зимни спортове',
-      'selected': true
-    }, {
-      'typeId': 4,
-      'name': 'Мотосни спортове',
-      'selected': true
-    }, {
-      'typeId': 5,
-      'name': 'Други спортове',
-      'selected': true
-    }];
-
-    self.tvs = [{
-      'tvId': 1,
-      'pic': 'bnt1',
-      'name': 'БНТ',
-      'selected': true
-    }, {
-      'tvId': 2,
-      'pic': 'bntHd',
-      'name': 'БНТ HD',
-      'selected': true
-    }, {
-      'tvId': 3,
-      'pic': 'btv',
-      'name': 'BTV',
-      'selected': false
-    }, {
-      'tvId': 4,
-      'pic': 'btvAction',
-      'name': 'BTV Action',
-      'selected': false
-    }, {
-      'tvId': 5,
-      'pic': 'ring',
-      'name': 'Ring',
-      'selected': true
-    }, {
-      'tvId': 6,
-      'pic': 'nova',
-      'name': 'Nova',
-      'selected': false
-    }, {
-      'tvId': 7,
-      'pic': 'novaSport',
-      'name': 'Nova Sport',
-      'selected': true
-    }, {
-      'tvId': 8,
-      'pic': 'diema',
-      'name': 'Diema',
-      'pic': 'bnt1',
-      'selected': true
-    }, {
-      'tvId': 9,
-      'pic': 'diemaSport',
-      'name': 'Diema Sport',
-      'selected': true
-    }, {
-      'tvId': 10,
-      'pic': 'diemaSport2',
-      'name': 'Diema Sport 2',
-      'selected': true
-    }, {
-      'tvId': 11,
-      'pic': 'eurosport',
-      'name': 'Eurosport',
-      'selected': true
-    }, {
-      'tvId': 12,
-      'pic': 'eurosport2',
-      'name': 'Eurosport 2',
-      'selected': true
-    }, {
-      'tvId': 13,
-      'pic': 'tv7',
-      'name': 'TV 7',
-      'selected': true
-    }, {
-      'tvId': 14,
-      'pic': 'ek',
-      'name': 'ЕК',
-      'selected': true
-    }, {
-      'tvId': 15,
-      'pic': 'other',
-      'name': 'Други',
-      'selected': true
-    }];
-
-
 
     self.sports = [{
       "_id": "5679f46e72407444219c4789",

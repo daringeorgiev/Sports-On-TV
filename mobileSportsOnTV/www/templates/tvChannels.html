@@ -9,9 +9,9 @@
     <form ng-submit="ctrl.doTvFilters()">
       <div class="list">
         <ul class="list">
-          <li class="item item-toggle" ng-repeat="tv in ctrl.tvs">
+          <li class="item item-toggle" ng-repeat="tv in ctrl.tvChannels">
             <a class="item item-avatar" href="#">
-              <img ng-src="../img/tv/{{tv.pic}}.jpg">
+              <img ng-src="../img/tv/{{tv.picture}}.jpg">
               <h2>
                 {{tv.name}}
               </h2>
