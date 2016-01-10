@@ -97,6 +97,13 @@ module.exports = {
                 return res.status(409)
                     .send('The sport already exist.');
             } else {
+                // Check Date
+                if (isNaN(new Date(req.body.startTime))) {
+                    res.status(422 ).send({
+                        message: 'Invalide date'
+                    });
+                    return;
+                }
                 Sport.create({
                     sportName: req.body.sportName,
                     startTime: new Date(req.body.startTime),
