@@ -2,14 +2,14 @@
   <ion-header-bar class="bar-positive">
     <h1 class="title">Видове спортове</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+      <button class="button button-clear" ng-click="ctrl.closeModal()">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="doTypeFilters()">
+    <form ng-submit="ctrl.doTypeFilters()">
       <div class="list">
           <ul class="list">
-              <li class="item item-toggle" ng-repeat="sportType in sportTypes">
+              <li class="item item-toggle" ng-repeat="sportType in ctrl.sportTypes">
                  {{sportType.name}}
                  <label class="toggle toggle-positive">
                    <input type="checkbox" ng-model = "sportType.selected">

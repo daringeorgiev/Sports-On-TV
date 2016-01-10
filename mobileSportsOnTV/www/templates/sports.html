@@ -1,7 +1,7 @@
 <ion-view view-title="Спортни Предавания">
   <ion-content>
     <ion-list>
-      <ion-item href="#/app/sports/{{sport.id}}" ng-repeat="sport in sports | filter : {}">
+      <ion-item href="#/app/sports/{{sport.id}}" ng-repeat="sport in ctrl.sports | filter : {}">
         <!-- {{sport.tv + ' -> ' + sport.sportName}} -->
         <a class="item item-avatar" href="#">
           <img src="../img/tv/diema.jpg">
@@ -20,11 +20,11 @@
       <!-- Tab 1 content -->
     </ion-tab>
 
-    <ion-tab title="Утре">
+    <ion-tab on-select="ctrl.getTodaySports()" title="Утре">
       <!-- Tab 2 content -->
     </ion-tab>
 
-    <ion-tab title="Други ден">
+    <ion-tab on-select="ctrl.getTodaySports()" title="Други ден">
       <!-- Tab 3 content -->
     </ion-tab>
 

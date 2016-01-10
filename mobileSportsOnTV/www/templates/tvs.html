@@ -2,14 +2,14 @@
   <ion-header-bar class="bar-positive">
     <h1 class="title">Телевизии</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+      <button class="button button-clear" ng-click="ctrl.closeModal()">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="doTvFilters()">
+    <form ng-submit="ctrl.doTvFilters()">
       <div class="list">
         <ul class="list">
-          <li class="item item-toggle" ng-repeat="tv in tvs">
+          <li class="item item-toggle" ng-repeat="tv in ctrl.tvs">
             <a class="item item-avatar" href="#">
               <img ng-src="../img/tv/{{tv.pic}}.jpg">
               <h2>
