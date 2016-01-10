@@ -33,8 +33,17 @@ module.exports = {
 
         var day = new Date(),
             secondDay = new Date();
-        day = day.setDate(day.getDate() + days);
-        secondDay = secondDay.setDate(secondDay.getDate() + days + 1);
+        day.setDate(day.getDate() + days);
+        secondDay.setDate(secondDay.getDate() + days + 1);
+
+        // Check if objects are Date
+        if ((Object.prototype.toString.call(day) !== '[object Date]') ||
+            (Object.prototype.toString.call(secondDay) !== '[object Date]')) {
+            res.status(500).send({
+                message: 'Invalide object type'
+            });
+            return;
+        }
 
         Sport.find({
             startTime: {
