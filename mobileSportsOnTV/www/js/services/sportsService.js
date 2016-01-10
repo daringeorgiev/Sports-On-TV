@@ -101,30 +101,30 @@
     }
 
     function getSportTypes() {
-        // ToDo get sport types from server
-        var sportTypes = [{
-          'typeId': 1,
-          'name': 'Футбол',
-          'selected': true
-        }, {
-          'typeId': 2,
-          'name': 'Отборни спортове',
-          'selected': false
-        }, {
-          'typeId': 3,
-          'name': 'Зимни спортове',
-          'selected': false
-        }, {
-          'typeId': 4,
-          'name': 'Мотосни спортове',
-          'selected': true
-        }, {
-          'typeId': 5,
-          'name': 'Други спортове',
-          'selected': true
-        }];
+      // ToDo get sport types from server
+      var sportTypes = [{
+        'typeId': 1,
+        'name': 'Футбол',
+        'selected': true
+      }, {
+        'typeId': 2,
+        'name': 'Отборни спортове',
+        'selected': false
+      }, {
+        'typeId': 3,
+        'name': 'Зимни спортове',
+        'selected': false
+      }, {
+        'typeId': 4,
+        'name': 'Мотосни спортове',
+        'selected': true
+      }, {
+        'typeId': 5,
+        'name': 'Други спортове',
+        'selected': true
+      }];
 
-        return sportTypes
+      return sportTypes
     }
     return {
       getTodaySports: getTodaySports,

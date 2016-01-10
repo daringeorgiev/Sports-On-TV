@@ -6,7 +6,7 @@
         <a class="item item-avatar" href="#">
           <img src="../img/tv/diema.jpg">
           <p>
-              {{sport.startTime.substring(11, 16)}}
+            {{sport.startTime.substring(11, 16)}} {{sport.tv}}
           </p>
           <h2>{{sport.sportName}}</h2>
           <p>{{sport.descr}}</p>
@@ -20,11 +20,11 @@
       <!-- Tab 1 content -->
     </ion-tab>
 
-    <ion-tab on-select="ctrl.getTodaySports()" title="Утре">
+    <ion-tab on-select="ctrl.getTomorrowSports()" title="Утре">
       <!-- Tab 2 content -->
     </ion-tab>
 
-    <ion-tab on-select="ctrl.getTodaySports()" title="Други ден">
+    <ion-tab on-select="ctrl.getDayAfterTomorrowSports()" title="Други ден">
       <!-- Tab 3 content -->
     </ion-tab>
 
