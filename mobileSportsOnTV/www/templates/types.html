@@ -8,17 +8,17 @@
   <ion-content>
     <form ng-submit="ctrl.doTypeFilters()">
       <div class="list">
-          <ul class="list">
-              <li class="item item-toggle" ng-repeat="sportType in ctrl.sportTypes">
-                 {{sportType.name}}
-                 <label class="toggle toggle-positive">
-                   <input type="checkbox" ng-model = "sportType.selected">
-                   <div class="track">
-                     <div class="handle"></div>
-                   </div>
-                 </label>
-              </li>
-          </ul>
+        <ul class="list">
+          <li class="item item-toggle" ng-repeat="sportType in ctrl.sportTypes">
+            {{sportType.name}}
+            <label class="toggle toggle-positive">
+              <input type="checkbox" ng-model="sportType.selected">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Приложи филтрите</button>
         </label>

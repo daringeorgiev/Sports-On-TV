@@ -20,8 +20,7 @@ app.use(bodyParser.json({
     type: 'application/vnd.api+json'
 }));
 app.use(methodOverride());
-
-app.use(cors())
+app.use(cors());
 
 //routes ========================================
 require('./app/routes')(app);

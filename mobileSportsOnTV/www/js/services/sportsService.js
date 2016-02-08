@@ -1,21 +1,20 @@
 (function() {
   'use strict';
   app.factory('sportsService', ['$http', function($http) {
-    var self = this,
-      baseUrl = 'http://localhost:8080'
+    var baseUrl = 'http://localhost:8080';
 
     function getTodaySports() {
       //   return $http.get(baseUrl + '/api/sports/getAll');
       return $http.get(baseUrl + '/api/sports/getByDaysDiff' + '?days=' + 0);
-    };
+    }
 
     function getTomorrowSports() {
-      return $http.get(baseUrl + '/api/sports/getByDaysDiff' + '?days=' + 1)
-    };
+      return $http.get(baseUrl + '/api/sports/getByDaysDiff' + '?days=' + 1);
+    }
 
     function getDayAfterTomorrowSports() {
-      return $http.get(baseUrl + '/api/sports/getByDaysDiff' + '?days=' + 2)
-    };
+      return $http.get(baseUrl + '/api/sports/getByDaysDiff' + '?days=' + 2);
+    }
 
     function getTvChannels() {
       // ToDo get tv chanels from server
@@ -59,7 +58,6 @@
         'tvId': 8,
         'picture': 'diema',
         'name': 'Diema',
-        'picture': 'bnt1',
         'selected': true
       }, {
         'tvId': 9,
@@ -97,7 +95,7 @@
         'name': 'Други',
         'selected': true
       }];
-      return tvChannels
+      return tvChannels;
     }
 
     function getSportTypes() {
@@ -124,7 +122,7 @@
         'selected': true
       }];
 
-      return sportTypes
+      return sportTypes;
     }
     return {
       getTodaySports: getTodaySports,
@@ -134,4 +132,4 @@
       getSportTypes: getSportTypes
     };
   }]);
-}())
+}());

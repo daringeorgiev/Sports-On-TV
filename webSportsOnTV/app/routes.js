@@ -3,6 +3,7 @@ var sportsCtrl = require('./controllers/SportsController'),
     auth = require('./auth');
 
 module.exports = function(app) {
+    'use strict';
     // Sports ===============================================
     app.get('/api/sports/today', sportsCtrl.getTodaySports);
     app.get('/api/sports/getByDaysDiff', sportsCtrl.getSportsByDaysDiff);

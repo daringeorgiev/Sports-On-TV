@@ -4,6 +4,7 @@ var User = require('../models/user'),
 
 module.exports = {
     userLogin: function(req, res) {
+        'use strict';
         // find the user
         User.findOne({
             name: req.body.name
@@ -53,6 +54,7 @@ module.exports = {
     },
 
     userRegister: function(req, res) {
+        'use strict';
         User.find({
             name: req.body.name
         }, function(err, data) {
@@ -69,7 +71,9 @@ module.exports = {
                 user.password = user.generateHash(req.body.password);
 
                 user.save(function(err) {
-                    if (err) throw err;
+                    if (err) {
+                        throw err;
+                    }
 
                     // create a token
                     var token = jwt.sign(user, authentication.secretPhrase, {
@@ -88,6 +92,7 @@ module.exports = {
     },
 
     getAllUsers: function(req, res) {
+        'use strict';
         User.find({}, function(err, users) {
             if (err) {
                 throw err;

@@ -7,6 +7,7 @@
 var app = angular.module('app', ['ionic'])
 
 .run(function($ionicPlatform) {
+  'use strict';
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,8 +24,8 @@ var app = angular.module('app', ['ionic'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+  'use strict';
   $stateProvider
-
     .state('app', {
     url: '/app',
     abstract: true,

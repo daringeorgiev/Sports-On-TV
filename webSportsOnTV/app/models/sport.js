@@ -1,4 +1,6 @@
-var mongoose = require('mongoose');
+// var TV = require('./tv');
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
 var sportSchema = mongoose.Schema({
     sportName: {
@@ -9,9 +11,11 @@ var sportSchema = mongoose.Schema({
         type: 'Date',
         required: true
     },
-    tv: {
-        type: 'String',
-        required: true
+    tvId: {
+        // type: 'String',
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'TV'
     },
     sportType: String,
     descr: String

@@ -1,8 +1,9 @@
-var Sport = require('../models/sport'),
-    TV = require('../models/tv');
+var Sport = require('../models/sport');
+// TV = require('../models/tv');
 
 module.exports = {
     getTodaySports: function(req, res) {
+        'use strict';
         var today = new Date();
         var tomorrow = new Date();
         tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
@@ -23,13 +24,14 @@ module.exports = {
     },
 
     getSportsByDaysDiff: function(req, res) {
+        'use strict';
         var days = parseInt(req.query.days);
         if (isNaN(days) || days < 0 || days > 2) {
             res.status(501).send({
                 message: 'Invalide day diff'
             });
             return;
-        };
+        }
 
         var day = new Date(),
             secondDay = new Date();
@@ -61,17 +63,24 @@ module.exports = {
     },
 
     getAllSports: function(req, res) {
-        Sport.find({}).sort({
-            startTime: 'asc'
-        }).exec(function(err, sports) {
-            if (err) {
-                throw err;
-            }
-            res.json(sports);
-        });
+        'use strict';
+        Sport.find({})
+            .populate({
+                path: 'tvId',
+                select: 'name picture'
+            })
+            .sort({
+                startTime: 'asc'
+            }).exec(function(err, sports) {
+                if (err) {
+                    throw err;
+                }
+                res.json(sports);
+            });
     },
 
     getSportById: function(req, res) {
+        'use strict';
         Sport.find({
             _id: req.query.id
         }, function(err, sport) {
@@ -84,6 +93,7 @@ module.exports = {
     },
 
     createSport: function(req, res) {
+        'use strict';
         Sport.find({
             sportName: req.body.sportName,
             startTime: new Date(req.body.startTime),
@@ -99,7 +109,7 @@ module.exports = {
             } else {
                 // Check Date
                 if (isNaN(new Date(req.body.startTime))) {
-                    res.status(422 ).send({
+                    res.status(422).send({
                         message: 'Invalide date'
                     });
                     return;
@@ -107,7 +117,7 @@ module.exports = {
                 Sport.create({
                     sportName: req.body.sportName,
                     startTime: new Date(req.body.startTime),
-                    tv: req.body.tv,
+                    tvId: req.body.tvId,
                     sportType: req.body.sportType,
                     descr: req.body.descr
                 }, function(err, sport) {
@@ -118,10 +128,11 @@ module.exports = {
                     res.send(sport);
                 });
             }
-        })
+        });
     },
 
     updateSport: function(req, res) {
+        'use strict';
         Sport.findOne({
             _id: req.body.id
         }, function(err, sport) {
@@ -137,7 +148,7 @@ module.exports = {
 
             sport.sportName = req.body.sportName;
             sport.startTime = new Date(req.body.startTime);
-            sport.tv = req.body.tv;
+            sport.tvId = req.body.tvId;
             sport.sportType = req.body.sportType;
             sport.descr = req.body.descr;
 
@@ -152,6 +163,7 @@ module.exports = {
     },
 
     deleteSport: function(req, res) {
+        'use strict';
         Sport.remove({
             _id: req.body.id
         }, function(err) {

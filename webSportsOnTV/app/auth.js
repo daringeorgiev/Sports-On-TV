@@ -4,6 +4,7 @@ var jwt = require('jsonwebtoken'),
 // route middleware to make sure a user is logged in
 module.exports = {
     isLoggedIn: function(req, res, next) {
+        'use strict';
         var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
         if (token) {
